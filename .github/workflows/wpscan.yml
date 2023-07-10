@@ -1,0 +1,19 @@
+name: Run WPScan check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run PHP Script
+        uses: docker://php:7.4-cli
+        with:
+          args: php check-wpscan.php
