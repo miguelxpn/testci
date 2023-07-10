@@ -1,4 +1,4 @@
 <?php
 
 echo "OI";
-exit(1);
+exit(0);
