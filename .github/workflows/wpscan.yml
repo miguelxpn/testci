@@ -15,5 +15,8 @@ jobs:
 
       - name: Run PHP Script
         uses: docker://php:7.4-cli
+        env:
+          WPSCAN_TOKEN: ${{ secrets.WPSCAN_TOKEN }}
+          WP_CONTENT_PATH: './wp-content'
         with:
           args: php check-wpscan.php
